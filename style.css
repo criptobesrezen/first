@@ -1,5 +1,4 @@
 body {
-    /*font-family: 'Marck Script', cursive;*/
     font-family: 'Poiret One', cursive;
     margin: 0;
     padding: 0;
@@ -88,4 +87,24 @@ ul, p {
 }
 .content__header {
     text-align: center;
+    font-size: 32px;
+}
+.files-list {
+    list-style-type: none;
+}
+.files-list-item {
+    font-family: 'Marck Script', cursive;
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+    font-size: 24px;
+}
+.files-list-item:hover {
+    /*text-decoration: underline;*/
+    text-shadow: 1px 1px 2px black, 0 0 1em red;
+}
+
+.files-list__padding {
+    font-family: 'Marck Script', cursive;
+    padding: 0 10px;
 }

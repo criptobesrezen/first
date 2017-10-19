@@ -16,7 +16,7 @@ gulp.task('default', function() {
     if (ENV != 'production') {
         tasks.push('watch');
     } else {
-        gulp.src([ 'src/css/*', 'src/js/*' ], {read: false}).pipe(clean());
+        gulp.src([ 'source/css/*', 'source/js/*' ], {read: false}).pipe(clean());
     }
 
     gulp.start(tasks);
@@ -35,7 +35,7 @@ gulp.task('javascript', function() {
         'js/scripts.js'
     ])
     // .pipe(babel({presets: ['es2015']}))
-        .pipe(concat('src/js/scripts.js'))
+        .pipe(concat('source/js/scripts.js'))
         .pipe(uglify())
         .pipe(gulp.dest('.'));
 });
@@ -49,7 +49,7 @@ gulp.task('less', function() {
         .pipe(less())
         .pipe(autoprefixer({browsers: ['last 10 versions'], cascade: false}))
         .pipe(minifyCSS())
-        .pipe(concat('src/css/style.css'))
+        .pipe(concat('source/css/style.css'))
         .pipe(gulpif(ENV != 'production', sourceMaps.write()))
         .pipe(gulp.dest('.'));
 });
@@ -58,7 +58,7 @@ gulp.task('fonts', function () {
     return gulp.src([
         'node_modules/lightgallery/dist/fonts/*'
     ])
-        .pipe(gulp.dest('src/fonts/'))
+        .pipe(gulp.dest('source/fonts/'))
 });
 
 gulp.task('cheat', function() {
@@ -66,6 +66,6 @@ gulp.task('cheat', function() {
         'less/styles.less'
     ])
         .pipe(less())
-        .pipe(concat('src/css/style.css'))
+        .pipe(concat('source/css/style.css'))
         .pipe(gulp.dest('.'));
 });
