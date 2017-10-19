@@ -1,22 +1,27 @@
 {
-  "name": "first",
+  "name": "edu.weblime.ru",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "gulp",
+    "gulp-dev": "gulp default watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/criptobesrezen/first.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/criptobesrezen/first/issues"
-  },
-  "homepage": "https://github.com/criptobesrezen/first#readme"
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-less": "^3.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "jquery": "^3.2.1",
+    "lightgallery": "^1.3.9",
+    "slick-carousel": "^1.6.0"
+  }
 }
