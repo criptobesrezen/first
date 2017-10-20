@@ -31,10 +31,13 @@
 
         ?>
         <ul class="files-list">
-            <?php $i = 0;
+            <?php $i = 1;
             foreach ($files1 as $file) {
                 if (in_array($file, array('.', '..'))) continue;?>
-            <li><span class="files-list__padding"><? echo $i++ . '.';?></span><a class="files-list-item" href="/source/files/<? echo($file); ?>"><? echo($file); ?></a><br></li><? } ?>
+            <li class="files-list__row"><span class="files-list__padding"><? echo $i++ . '.';?></span>
+                <a class="files-list-item" href="/source/files/<? echo($file); ?>"><? echo($file); ?></a>
+                <input class="files-list__buttons files-list__buttons--blue" type="submit" value="Изменить">
+                <input class="files-list__buttons files-list__buttons--red" type="submit" value="Удалить"><br></li><? } ?>
         </ul>
     </div>
 </section>

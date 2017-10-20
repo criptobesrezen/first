@@ -108,3 +108,29 @@ ul, p {
     font-family: 'Marck Script', cursive;
     padding: 0 10px;
 }
+.files-list__row {
+    display: flex;
+}
+.files-list__buttons {
+    box-sizing: border-box;
+    width: 100px;
+    margin: 0 0 0 7px;
+    cursor: pointer;
+    color: white;
+    opacity: .7;
+}
+.files-list__buttons:hover {
+    opacity: 1;
+}
+
+.files-list__buttons--red {
+    background: red;
+    margin: 0;
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+}
+.files-list__buttons--blue {
+    background: dodgerblue;
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+}
