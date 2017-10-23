@@ -3,13 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Создание файлов</title>
+    <title>Загрузка файлов</title>
 </head>
 <body>
 <?php require_once 'menu.php'; ?>
+
 <section class="wrapper">
     <div class="content">
-        <h1 class="content__header">Страница создание файлов</h1>
+        <h1 class="content__header">Добро пожаловать на мой сайт</h1>
         <form action="/source/functions/upload.php" method="post" enctype="multipart/form-data">
             <input type="file" name="file"><br />
             <input type="submit" value="Отправить файл">

@@ -63,7 +63,7 @@ gulp.task('fonts', function () {
 
 gulp.task('cheat', function() {
     return gulp.src([
-        'less/styles.less'
+        '/source/less/styles.less'
     ])
         .pipe(less())
         .pipe(concat('source/css/style.css'))
