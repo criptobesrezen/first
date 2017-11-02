@@ -21,14 +21,14 @@ switch ( $action ) {
         update_file();
         break;
     default:
-        show_list();
+        echo 'Выберите действие:';
 
 }
 
 function create_file() {
 
-    $fileName = '';
-    $createFile = tempnam('/files', $fileName);
+    $fileName = $_GET['newFileName'];
+    $createFile = tempnam('/files', $fileName.'txt');
     $handle = fopen($createFile, "w");
     fwrite($handle, "записываем во временный файл");
     fclose($handle);
