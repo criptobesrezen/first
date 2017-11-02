@@ -15,12 +15,14 @@
         $result = $connection->query($sql);
 
         $dir    = '/files';
-        $files1 = scandir('source'.$dir);
+        $files = scandir('source'.$dir);
 
         ?>
+
+
         <ul class="files-list">
             <?php $i = 1;
-            foreach ($files1 as $file) {
+            foreach ($files as $file) {
                 if (in_array($file, array('.', '..'))) continue;?>
             <li class="files-list__row"><span class="files-list__padding"><? echo $i++ . '.';?></span>
                 <a class="files-list-item" href="/source/files/<? echo($file); ?>"><? echo($file); ?></a>
