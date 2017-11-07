@@ -1,1 +1,137 @@
-@import "/source/lessce/less/source/main/default.less";
+body {
+  font-family: 'Poiret One', cursive;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+ul, p {
+  padding: 0;
+  margin: 0;
+}
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: red;
+}
+.logo:hover {
+  transition: .5;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px black, 0 0 1em red;
+}
+
+.main-nav {
+  height: 100px;
+  background-color: #52292f;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 5px black, 0 0 18px red;
+  margin-bottom: 50px;
+}
+.main-nav__container {
+  display: flex;
+  justify-content: space-between;
+}
+.menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.menu__button {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 32px;
+  margin-left: 20px;
+
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu__button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: red;
+  box-shadow: 1px 1px 2px black, 0 0 1em red;
+  height: 3px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.menu__button:hover:before, .menu__button:focus:before, .menu__button:active:before {
+  left: 0;
+  right: 0;
+}
+
+
+.wrapper {
+  width: 1024px;
+  margin: 0 auto;
+}
+.content {
+  width: 100%;
+  box-shadow: 1px 1px 2px black;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.content__header {
+  text-align: center;
+  font-size: 32px;
+}
+.files-list {
+  list-style-type: none;
+}
+.files-list-item {
+  font-family: 'Marck Script', cursive;
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+  font-size: 24px;
+}
+.files-list-item:hover {
+  /*text-decoration: underline;*/
+  text-shadow: 1px 1px 2px black, 0 0 1em red;
+}
+
+.files-list__padding {
+  font-family: 'Marck Script', cursive;
+  padding: 0 10px;
+}
+.files-list__row {
+  display: flex;
+}
+.files-list__buttons {
+  box-sizing: border-box;
+  width: 100px;
+  margin: 0 0 0 7px;
+  cursor: pointer;
+  color: white;
+  opacity: .7;
+}
+.files-list__buttons:hover {
+  opacity: 1;
+}
+
+.files-list__buttons--red {
+  background: red;
+  margin: 0;
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+}
+.files-list__buttons--blue {
+  background: dodgerblue;
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+}

@@ -11,8 +11,19 @@ const clean         = require('gulp-clean');
 
 const ENV = process.env.NODE_ENV || 'production';
 
+
+// resource
+var lessSrc = [
+        'source/less/*.less',
+        'source/less/*/*.less'
+    ],
+    jsSrc = [
+        // 'node_modules/jquery/dist/jquery.js',
+        'source/js/**/*.js'
+    ];
+
 gulp.task('default', function() {
-    var tasks = ['javascript', 'less', 'fonts'];
+    var tasks = ['javascript', 'less'/*, 'fonts'*/];
     if (ENV != 'production') {
         tasks.push('watch');
     } else {
@@ -23,49 +34,49 @@ gulp.task('default', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('less/**/*.less', ['less']);
-    gulp.watch('js/**/*.js', ['javascript']);
+    gulp.watch([lessSrc], ['less']);
+    gulp.watch([jsSrc], ['javascript']);
 });
 
 gulp.task('javascript', function() {
     return gulp.src([
-        'node_modules/jquery/dist/jquery.min.js',
-        'node_modules/slick-carousel/slick/slick.js',
-        'node_modules/lightgallery/dist/js/lightgallery.js',
+        // 'node_modules/jquery/dist/jquery.min.js',
+        // 'node_modules/slick-carousel/slick/slick.js',
+        // 'node_modules/lightgallery/dist/js/lightgallery.js',
         'js/scripts.js'
     ])
     // .pipe(babel({presets: ['es2015']}))
-        .pipe(concat('source/js/scripts.js'))
+        .pipe(concat('js/scripts.js'))
         .pipe(uglify())
         .pipe(gulp.dest('.'));
 });
 
 gulp.task('less', function() {
     return gulp.src([
-        'node_modules/lightgallery/dist/css/lightgallery.css',
+        // 'node_modules/lightgallery/dist/css/lightgallery.css',
         'less/styles.less'
     ])
         .pipe(gulpif(ENV != 'production', sourceMaps.init()))
         .pipe(less())
         .pipe(autoprefixer({browsers: ['last 10 versions'], cascade: false}))
         .pipe(minifyCSS())
-        .pipe(concat('source/css/style.css'))
+        .pipe(concat('style.css'))
         .pipe(gulpif(ENV != 'production', sourceMaps.write()))
         .pipe(gulp.dest('.'));
 });
 
-gulp.task('fonts', function () {
-    return gulp.src([
-        'node_modules/lightgallery/dist/fonts/*'
-    ])
-        .pipe(gulp.dest('source/fonts/'))
-});
+// gulp.task('fonts', function () {
+//     return gulp.src([
+//         'node_modules/lightgallery/dist/fonts/*'
+//     ])
+//         .pipe(gulp.dest('source/fonts/'))
+// });
 
 gulp.task('cheat', function() {
     return gulp.src([
         '/source/less/styles.less'
     ])
         .pipe(less())
-        .pipe(concat('source/css/style.css'))
+        .pipe(concat('style.css'))
         .pipe(gulp.dest('.'));
 });
